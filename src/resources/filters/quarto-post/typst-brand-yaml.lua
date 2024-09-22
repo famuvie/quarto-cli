@@ -85,10 +85,6 @@ function render_typst_brand_yaml()
         end
 
         -- typography
-        local headings = _quarto.modules.brand.get_typography('headings')
-        if headings and headings.family then
-          quarto.doc.include_text('in-header', '#show heading: set text(font: "' .. headings.family .. '")')
-        end
         local monospace = _quarto.modules.brand.get_typography('monospace')
         if monospace and monospace.family then
             quarto.doc.include_text('in-header', '#show raw: set text(font: "' .. monospace.family .. '")')
@@ -140,12 +136,21 @@ function render_typst_brand_yaml()
     end,
     Meta = function(meta)
       local base = _quarto.modules.brand.get_typography('base')
+      meta.brand = meta.brand or {typography = {}}
       if base and base.family then
-        meta['mainfont'] = base.family
+        meta.brand.typography.base = {
+          family = base.family,
+          weight = base.weight,
+          style = base.style
+        }
       end
       local headings = _quarto.modules.brand.get_typography('headings')
       if headings and headings.family then
-        meta['title-font'] = headings.family
+        meta.brand.typography.headings = {
+          family = headings.family,
+          weight = headings.weight,
+          style = headings.style
+        }
       end
       return meta
     end
