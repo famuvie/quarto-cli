@@ -31,3 +31,6 @@ typography:
     family: "Inconsolata"
   monospace-inline:
     weight: 600
+    color: rgb(8, 111, 15)
+  monospace-block:
+    color: firebrick

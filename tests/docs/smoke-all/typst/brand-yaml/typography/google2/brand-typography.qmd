@@ -20,7 +20,7 @@ _quarto:
 
 paragraph is `#context text.font`{=typst} `#context text.weight`{=typst} `#context text.style`{=typst} `#context text.size`{=typst}, and here's an inline code block `{js} fib(90)` lorem ipsum dolor.
 
-```js
+```
 const fib = num => num < 2 ? num : fib(num-1) + fib(num - 2);
 console.log(fib(12))
 ```

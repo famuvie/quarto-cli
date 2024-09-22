@@ -83,23 +83,38 @@ function render_typst_brand_yaml()
           local decl = '// theme colors at opacity ' .. BACKGROUND_OPACITY .. '\n#let brand-color-background = ' .. to_typst_dict_indent(themebk)
           quarto.doc.include_text('in-header', decl)
         end
-
+        function quote_string(value)
+          if type(value) ~= 'string' then return value end
+          return '"' .. value .. '"'
+        end
+        function conditional_entry(key, value, quote_strings)
+          if quote_strings == null then quote_strings = true end
+          if not value then return '' end
+          if quote_strings then value = quote_string(value) end
+          return key .. ': ' .. value .. ', '
+        end
         -- typography
         local monospaceInline = _quarto.modules.brand.get_typography('monospace-inline')
         if monospaceInline and monospaceInline.family then
-            quarto.doc.include_text('in-header', '#show raw.where(block: false): set text('
-              .. 'font: "' .. monospaceInline.family .. '", '
-              .. 'weight: ' .. (monospaceInline.weight or '"regular"') .. ', '
-              .. 'style: "' .. (monospaceInline.style or 'normal') .. '", '
-              .. ')')
+            quarto.doc.include_text('in-header', table.concat({
+              '#show raw.where(block: false): set text(',
+              conditional_entry('font', monospaceInline.family),
+              conditional_entry('weight', monospaceInline.weight),
+              conditional_entry('style', monospaceInline.style),
+              conditional_entry('fill', monospaceInline.color, false),
+              ')'
+            }))
         end
         local monospaceBlock = _quarto.modules.brand.get_typography('monospace-block')
         if monospaceBlock and monospaceBlock.family then
-          quarto.doc.include_text('in-header', '#show raw.where(block: true): set text('
-          .. 'font: "' .. monospaceBlock.family .. '", '
-          .. 'weight: ' .. (monospaceBlock.weight or '"regular"') .. ', '
-          .. 'style: "' .. (monospaceBlock.style or 'normal') .. '", '
-          .. ')')
+          quarto.doc.include_text('in-header', table.concat({
+            '#show raw.where(block: true): set text(',
+            conditional_entry('font', monospaceBlock.family),
+            conditional_entry('weight', monospaceBlock.weight),
+            conditional_entry('style', monospaceBlock.style),
+            conditional_entry('fill', monospaceBlock.color, false),
+            ')'
+          }))
         end
         -- logo
         local logo = param('logo')
