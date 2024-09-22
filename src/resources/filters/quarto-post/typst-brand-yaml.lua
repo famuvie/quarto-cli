@@ -83,11 +83,11 @@ function render_typst_brand_yaml()
           local decl = '// theme colors at opacity ' .. BACKGROUND_OPACITY .. '\n#let brand-color-background = ' .. to_typst_dict_indent(themebk)
           quarto.doc.include_text('in-header', decl)
         end
-        function quote_string(value)
+        local function quote_string(value)
           if type(value) ~= 'string' then return value end
           return '"' .. value .. '"'
         end
-        function conditional_entry(key, value, quote_strings)
+        local function conditional_entry(key, value, quote_strings)
           if quote_strings == null then quote_strings = true end
           if not value then return '' end
           if quote_strings then value = quote_string(value) end
@@ -179,6 +179,24 @@ function render_typst_brand_yaml()
         }
       end
       return meta
+    end,
+    Code = function(code)
+      local monospaceInline = _quarto.modules.brand.get_typography('monospace-inline')
+      if monospaceInline and monospaceInline['background-color'] then
+        return pandoc.Inlines({
+          pandoc.RawInline('typst', '#highlight(fill: ' .. monospaceInline['background-color'] .. ')['),
+          code,
+          pandoc.RawInline('typst', ']')
+        })
+      end
+    end,
+    CodeBlock = function(codeblock)
+      local monospaceBlock = _quarto.modules.brand.get_typography('monospace-block')
+      if monospaceBlock and monospaceBlock['background-color'] then
+        local div = pandoc.Div({}, pandoc.Attr('', {}, {['typst:fill'] = monospaceBlock['background-color']}))
+        div.content:insert(codeblock)
+        return div
+      end
     end
   }
 end
