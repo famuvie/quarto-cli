@@ -17,6 +17,9 @@ typography:
       family: "Montserrat"
       weight: [400, 700, 900]
       style: [normal, italic]
+    - source: google
+      family: "Inconsolata"
+      weight: [400, 600]
   base:
     family: "Baskerville"
     style: italic
@@ -24,3 +27,7 @@ typography:
   headings:
     family: "Montserrat"
     weight: 900
+  monospace:
+    family: "Inconsolata"
+  monospace-inline:
+    weight: 600

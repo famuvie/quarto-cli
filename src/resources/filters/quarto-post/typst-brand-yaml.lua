@@ -85,11 +85,22 @@ function render_typst_brand_yaml()
         end
 
         -- typography
-        local monospace = _quarto.modules.brand.get_typography('monospace')
-        if monospace and monospace.family then
-            quarto.doc.include_text('in-header', '#show raw: set text(font: "' .. monospace.family .. '")')
+        local monospaceInline = _quarto.modules.brand.get_typography('monospace-inline')
+        if monospaceInline and monospaceInline.family then
+            quarto.doc.include_text('in-header', '#show raw.where(block: false): set text('
+              .. 'font: "' .. monospaceInline.family .. '", '
+              .. 'weight: ' .. (monospaceInline.weight or '"regular"') .. ', '
+              .. 'style: "' .. (monospaceInline.style or 'normal') .. '", '
+              .. ')')
         end
-
+        local monospaceBlock = _quarto.modules.brand.get_typography('monospace-block')
+        if monospaceBlock and monospaceBlock.family then
+          quarto.doc.include_text('in-header', '#show raw.where(block: true): set text('
+          .. 'font: "' .. monospaceBlock.family .. '", '
+          .. 'weight: ' .. (monospaceBlock.weight or '"regular"') .. ', '
+          .. 'style: "' .. (monospaceBlock.style or 'normal') .. '", '
+          .. ')')
+        end
         -- logo
         local logo = param('logo')
         local logoOptions = {}
