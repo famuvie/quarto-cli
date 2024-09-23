@@ -1,6 +1,6 @@
 {
   "imports": {
-    "archive/": "https://deno.land/std@0.217.0/archive/",
+    "archive/": "https://deno.land/std@0.224.0/archive/",
     "async/": "https://deno.land/std@0.217.0/async/",
     "bytes/": "https://deno.land/std@0.217.0/bytes/",
     "collection/": "https://deno.land/std@0.217.0/collection/",
