@@ -7,7 +7,7 @@
 import { info } from "../../deno_ral/log.ts";
 import { dirname, join, relative } from "../../deno_ral/path.ts";
 import { copy } from "../../deno_ral/fs.ts";
-import * as colors from "fmt/colors.ts";
+import * as colors from "fmt/colors";
 
 import { Confirm } from "cliffy/prompt/confirm.ts";
 

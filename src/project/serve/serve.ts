@@ -13,7 +13,7 @@ import {
   join,
   relative,
 } from "../../deno_ral/path.ts";
-import * as colors from "fmt/colors.ts";
+import * as colors from "fmt/colors";
 
 import * as ld from "../../core/lodash.ts";
 

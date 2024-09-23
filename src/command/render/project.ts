@@ -9,7 +9,7 @@ import { dirname, isAbsolute, join, relative } from "../../deno_ral/path.ts";
 import { info, warning } from "../../deno_ral/log.ts";
 import { mergeProjectMetadata } from "../../config/metadata.ts";
 
-import * as colors from "fmt/colors.ts";
+import * as colors from "fmt/colors";
 
 import { copyMinimal, copyTo } from "../../core/copy.ts";
 import * as ld from "../../core/lodash.ts";
@@ -68,7 +68,7 @@ import {
 } from "../../project/project-shared.ts";
 import { asArray } from "../../core/array.ts";
 import { normalizePath } from "../../core/path.ts";
-import { isSubdir } from "fs/_is_subdir.ts";
+import { isSubdir } from "../../deno_ral/fs.ts";
 import { Format } from "../../config/types.ts";
 import { fileExecutionEngine } from "../../execute/engine.ts";
 import { projectContextForDirectory } from "../../project/project-context.ts";

@@ -5,7 +5,7 @@
  */
 import momentGuess from "moment-guess";
 
-import { parse } from "datetime/mod.ts";
+import { parse } from "datetime/parse";
 import dayjs from "dayjs/dayjs.min.js";
 import advancedPlugin from "../resources/library/dayjs/plugins/advanced.js";
 import timezonePlugin from "../resources/library/dayjs/plugins/timezone.js";

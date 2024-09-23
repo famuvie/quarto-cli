@@ -6,7 +6,7 @@
  */
 
 import { execProcess } from "../../../src/core/process.ts";
-import { assert } from "testing/asserts.ts";
+import { assert } from "testing/asserts";
 import { unitTest } from "../../test.ts";
 
 unitTest("yaml-intelligence-unit-regression", async () => {

@@ -10,7 +10,7 @@ import { info } from "../../deno_ral/log.ts";
 
 import { existsSync, expandGlobSync } from "../../deno_ral/fs.ts";
 
-import { stringify } from "yaml/mod.ts";
+import { stringify } from "yaml/stringify";
 import { encodeBase64 } from "encoding/base64";
 
 import * as ld from "../../core/lodash.ts";

@@ -7,7 +7,7 @@
 import { ensureDirSync, existsSync } from "../../deno_ral/fs.ts";
 import { join } from "../../deno_ral/path.ts";
 import { info } from "../../deno_ral/log.ts";
-import * as colors from "fmt/colors.ts";
+import * as colors from "fmt/colors";
 import { isServerSession, isWindows } from "../../core/platform.ts";
 import { openUrl } from "../../core/shell.ts";
 import { sleep } from "../../core/wait.ts";

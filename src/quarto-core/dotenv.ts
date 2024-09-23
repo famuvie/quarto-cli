@@ -4,7 +4,8 @@
  * Copyright (C) 2020-2022 Posit Software, PBC
  */
 
-import { load as config, stringify } from "dotenv/mod.ts";
+import { load as config } from "dotenv/load";
+import { stringify } from "dotenv/stringify";
 import { join } from "../deno_ral/path.ts";
 import { safeExistsSync } from "../core/path.ts";
 import { isEqual } from "../core/lodash.ts";

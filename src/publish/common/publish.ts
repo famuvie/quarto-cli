@@ -5,7 +5,7 @@
  */
 
 import { info } from "../../deno_ral/log.ts";
-import * as colors from "fmt/colors.ts";
+import * as colors from "fmt/colors";
 import { ensureDirSync, walkSync } from "../../deno_ral/fs.ts";
 
 import { Input } from "cliffy/prompt/input.ts";

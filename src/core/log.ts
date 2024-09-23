@@ -4,17 +4,17 @@
  * Copyright (C) 2020-2022 Posit Software, PBC
  */
 
-import { ensureDirSync } from "fs/mod.ts";
+import { ensureDirSync } from "../deno_ral/fs.ts";
 import { dirname } from "../deno_ral/path.ts";
-import * as colors from "fmt/colors.ts";
+import * as colors from "fmt/colors";
 import * as log from "../deno_ral/log.ts";
-import { LogRecord } from "log/logger.ts";
-import { BaseHandler } from "log/base_handler.ts";
-import { FileHandler } from "log/file_handler.ts";
+import { LogRecord } from "log/logger";
+import { BaseHandler } from "log/base-handler";
+import { FileHandler } from "log/file-handler";
 import { Command } from "cliffy/command/mod.ts";
 
 import { getenv } from "./env.ts";
-import { Args } from "flags/mod.ts";
+import { Args } from "flags";
 import { lines } from "./text.ts";
 import { debug, error, getLogger, setup, warning } from "../deno_ral/log.ts";
 import { asErrorEx, InternalError } from "./lib/error.ts";

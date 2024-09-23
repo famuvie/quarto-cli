@@ -6,12 +6,11 @@
 
 // deno-lint-ignore-file camelcase
 
-import { ensureDirSync } from "fs/ensure_dir.ts";
+import { ensureDirSync, walkSync } from "../../deno_ral/fs.ts";
 import { dirname, extname, join, relative } from "../../deno_ral/path.ts";
-import { walkSync } from "fs/walk.ts";
-import * as colors from "fmt/colors.ts";
-import { decodeBase64 as base64decode } from "encoding/base64.ts";
-import { DumpOptions as StringifyOptions, stringify } from "yaml/mod.ts";
+import * as colors from "fmt/colors";
+import { decodeBase64 as base64decode } from "encoding/base64";
+import { DumpOptions as StringifyOptions, stringify } from "yaml/stringify";
 import { partitionCellOptions } from "../lib/partition-cell-options.ts";
 import * as ld from "../lodash.ts";
 
@@ -156,7 +155,7 @@ import {
 import { convertToHtmlSpans, hasAnsiEscapeCodes } from "../ansi-colors.ts";
 import { kProjectType, ProjectContext } from "../../project/types.ts";
 import { mergeConfigs } from "../config.ts";
-import { encodeBase64 } from "encoding/base64.ts";
+import { encodeBase64 } from "encoding/base64";
 import {
   isHtmlOutput,
   isIpynbOutput,

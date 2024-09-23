@@ -5,7 +5,7 @@
 *
 */
 import { existsSync } from "fs/mod.ts";
-import { fail } from "testing/asserts.ts";
+import { fail } from "testing/asserts";
 import { warning } from "../src/deno_ral/log.ts";
 import { initDenoDom } from "../src/core/deno-dom.ts";
 

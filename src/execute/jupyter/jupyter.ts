@@ -110,7 +110,7 @@ import { jupyterCapabilities } from "../../core/jupyter/capabilities.ts";
 import { runExternalPreviewServer } from "../../preview/preview-server.ts";
 import { onCleanup } from "../../core/cleanup.ts";
 import { projectOutputDir } from "../../project/project-shared.ts";
-import { assert } from "testing/asserts.ts";
+import { assert } from "testing/asserts";
 
 export const jupyterEngine: ExecutionEngine = {
   name: kJupyterEngine,

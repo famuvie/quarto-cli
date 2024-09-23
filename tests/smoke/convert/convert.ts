@@ -5,7 +5,7 @@
 *
 */
 import { existsSync } from "fs/mod.ts";
-import { assert } from "testing/asserts.ts";
+import { assert } from "testing/asserts";
 
 import { outputForInput } from "../../utils.ts";
 import {

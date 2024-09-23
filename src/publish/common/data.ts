@@ -4,7 +4,7 @@
  * Copyright (C) 2020-2022 Posit Software, PBC
  */
 
-import { ensureDirSync, existsSync } from "../..deno_ral/fs.ts";
+import { ensureDirSync, existsSync } from "../../deno_ral/fs.ts";
 import { join } from "../../deno_ral/path.ts";
 
 import { quartoDataDir } from "../../core/appdirs.ts";

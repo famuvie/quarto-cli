@@ -11,7 +11,7 @@ import {
   ManuscriptConfig,
   ResolvedManuscriptConfig,
 } from "./manuscript-types.ts";
-import { readLines } from "io/mod.ts";
+import { readLines } from "../../../deno_ral/io.ts";
 import { Format } from "../../../config/types.ts";
 import { kNotebookViewStyle } from "../../../config/constants.ts";
 

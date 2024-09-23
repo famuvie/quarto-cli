@@ -6,7 +6,7 @@
 import { join } from "../../deno_ral/path.ts";
 import { existsSync } from "../../deno_ral/fs.ts";
 
-import * as colors from "fmt/colors.ts";
+import * as colors from "fmt/colors";
 
 import { pathWithForwardSlashes } from "../path.ts";
 

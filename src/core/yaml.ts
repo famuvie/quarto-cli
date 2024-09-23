@@ -29,10 +29,10 @@ import {
 
 /// YAML schema imports
 
-import { Schema } from "yaml/schema";
+// import { Schema } from "yaml/schema";
+// import { bool, float, int, nil } from "yaml/_type/mod.ts";
 import { Type } from "yaml/type";
-import { bool, float, int, nil } from "yaml/_type/mod.ts";
-import { failsafe } from "yaml/schema/failsafe";
+import { FAILSAFE_SCHEMA } from "yaml/schema/failsafe";
 
 const kRegExBeginYAML = /^---[ \t]*$/;
 const kRegExEndYAML = /^(?:---|\.\.\.)([ \t]*)$/;
@@ -261,22 +261,26 @@ export class YAMLValidationError extends ErrorEx {
 
 // Standard YAML's JSON schema + an expr tag handler ()
 // http://www.yaml.org/spec/1.2/spec.html#id2803231
-export const QuartoJSONSchema = new Schema({
-  implicit: [nil, bool, int, float],
-  include: [failsafe],
-  explicit: [
-    new Type("!expr", {
-      kind: "scalar",
-      construct(data): Record<string, unknown> {
-        const result: string = data !== null ? data : "";
-        return {
-          value: result,
-          tag: "!expr",
-        };
-      },
-    }),
-  ],
-});
+
+// We're blocked by https://github.com/denoland/std/issues/6037
+//
+// export const QuartoJSONSchema = new Schema({
+//   implicit: [nil, bool, int, float],
+//   include: [failsafe],
+//   explicit: [
+//     new Type("!expr", {
+//       kind: "scalar",
+//       construct(data): Record<string, unknown> {
+//         const result: string = data !== null ? data : "";
+//         return {
+//           value: result,
+//           tag: "!expr",
+//         };
+//       },
+//     }),
+//   ],
+// });
+export const QuartoJSONSchema = FAILSAFE_SCHEMA;
 
 // TODO there's lots of work to do here.
 // TODO take MappedString and fix line numbers

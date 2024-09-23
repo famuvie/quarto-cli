@@ -8,7 +8,7 @@ import { existsSync } from "../deno_ral/fs.ts";
 import { basename, extname, join, normalize, posix } from "../deno_ral/path.ts";
 import { error, info } from "../deno_ral/log.ts";
 
-import * as colors from "fmt/colors.ts";
+import * as colors from "fmt/colors";
 
 import {
   contentType,
