@@ -39,13 +39,13 @@ import * as textproto from "https://deno.land/std@0.159.0/textproto/mod.ts";
 import * as uuid from "https://deno.land/std@0.159.0/uuid/mod.ts";
 */
 
-import * as tar from "https://deno.land/std@0.224.0/archive/tar.ts";
-import * as async from "https://deno.land/std@0.224.0/async/mod.ts";
-import * as bytes from "https://deno.land/std@0.224.0/bytes/mod.ts";
-import * as collections from "https://deno.land/std@0.224.0/collections/mod.ts";
-import * as crypto from "https://deno.land/std@0.224.0/crypto/mod.ts";
-import * as datetime from "https://deno.land/std@0.224.0/datetime/mod.ts";
-import * as dotenv from "https://deno.land/std@0.224.0/dotenv/mod.ts";
+import * as tar from "jsr:/@std/archive@^0.224.0/tar";
+import * as async from "jsr:/@std/async@^0.224.0";
+import * as bytes from "jsr:/@std/bytes@^0.224.0";
+import * as collections from "jsr:/@std/collections@^0.224.0";
+import * as crypto from "jsr:/@std/crypto@^0.224.0";
+import * as datetime from "jsr:/@std/datetime@^0.224.0";
+import * as dotenv from "jsr:/@std/dotenv@^0.224.0";
 
 // encoding has no mod.ts
 import * as ascii85 from "https://deno.land/std@0.224.0/encoding/ascii85.ts";
@@ -53,29 +53,30 @@ import * as base32 from "https://deno.land/std@0.224.0/encoding/base32.ts";
 import * as base58 from "https://deno.land/std@0.224.0/encoding/base58.ts";
 import * as base64 from "https://deno.land/std@0.224.0/encoding/base64.ts";
 import * as base64url from "https://deno.land/std@0.224.0/encoding/base64url.ts";
-import * as csv from "https://deno.land/std@0.224.0/csv/mod.ts";
-import * as front_matter from "https://deno.land/std@0.224.0/front_matter/mod.ts";
+import * as csv from "jsr:/@std/csv@^0.224.0";
+import * as front_matter from "jsr:/@std/front-matter@^0.224.0";
 import * as hex from "https://deno.land/std@0.224.0/encoding/hex.ts";
-import * as jsonc from "https://deno.land/std@0.224.0/jsonc/mod.ts";
-import * as toml from "https://deno.land/std@0.224.0/toml/mod.ts";
+import * as jsonc from "jsr:/@std/jsonc@^0.224.0";
+import * as toml from "jsr:/@std/toml@^0.224.0";
 import * as varint from "https://deno.land/std@0.224.0/encoding/varint.ts";
-import * as yaml from "https://deno.land/std@0.224.0/yaml/mod.ts";
+import * as yaml from "jsr:/@std/yaml@^0.224.0";
 
-import * as flags from "https://deno.land/std@0.224.0/flags/mod.ts";
+import * as flags from "jsr:/@std/flags@^0.224.0";
 import * as fmt_bytes from "https://deno.land/std@0.224.0/fmt/bytes.ts";
 import * as fmt_colors from "https://deno.land/std@0.224.0/fmt/colors.ts";
 import * as fmt_printf from "https://deno.land/std@0.224.0/fmt/printf.ts";
-import * as fs from "https://deno.land/std@0.224.0/fs/mod.ts";
-import * as http from "https://deno.land/std@0.224.0/http/mod.ts";
-import * as io from "https://deno.land/std@0.224.0/io/mod.ts";
-import * as log from "https://deno.land/std@0.224.0/log/mod.ts";
-import * as mediaTypes from "https://deno.land/std@0.224.0/media_types/mod.ts";
-import * as path from "https://deno.land/std@0.224.0/path/mod.ts";
-import * as permissions from "https://deno.land/std@0.224.0/permissions/mod.ts";
-import * as semver from "https://deno.land/std@0.224.0/semver/mod.ts";
-import * as streams from "https://deno.land/std@0.224.0/streams/mod.ts";
-import * as uuid from "https://deno.land/std@0.224.0/uuid/mod.ts";
-import * as version from "https://deno.land/std@0.224.0/version.ts";
+import * as fs from "jsr:/@std/fs@^0.224.0";
+import * as http from "jsr:/@std/http@^0.224.0";
+import * as io from "jsr:/@std/io@^0.224.0";
+import * as log from "jsr:/@std/log@^0.224.0";
+import * as mediaTypes from "jsr:/@std/media-types@^0.224.0";
+import * as path from "jsr:/@std/path@^0.224.0";
+import * as permissions from "jsr:/@std/permissions@^0.224.0";
+import * as semver from "jsr:/@std/semver@^0.224.0";
+import * as streams from "jsr:/@std/streams@^0.224.0";
+import * as uuid from "jsr:/@std/uuid@^0.224.0";
+// seems like jsr doesn't export version numbers?!
+// import * as version from "jsr:/@std/version@^0.224.0";
 import juice from "https://cdn.skypack.dev/juice@10.0.0";
 
 /*

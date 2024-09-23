@@ -7,14 +7,16 @@
 import { fromFileUrl } from "./path.ts";
 import { resolve, SEP as SEPARATOR } from "./path.ts";
 
-export { ensureDirSync } from "fs/ensure-dir";
+export { ensureDir, ensureDirSync } from "fs/ensure-dir";
 export { existsSync } from "fs/exists";
-export { walkSync } from "fs/walk";
-export { expandGlobSync } from "fs/expand-glob";
+export { walk, walkSync } from "fs/walk";
+export { expandGlob, expandGlobSync } from "fs/expand-glob";
+export type { ExpandGlobOptions } from "fs/expand-glob";
 export { EOL, LF } from "fs/eol";
 export { copySync } from "fs/copy";
 export type { CopyOptions } from "fs/copy";
 export { moveSync } from "fs/move";
+export { emptyDirSync } from "fs/empty-dir";
 
 // It looks like these exports disappeared when Deno moved to JSR? :(
 // from https://jsr.io/@std/fs/1.0.3/_get_file_info_type.ts

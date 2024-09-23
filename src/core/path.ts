@@ -7,7 +7,6 @@
 import {
   basename,
   dirname,
-  expandGlobSync,
   extname,
   fromFileUrl,
   globToRegExp,
@@ -19,7 +18,7 @@ import {
 
 import { warning } from "../deno_ral/log.ts";
 
-import { existsSync } from "../deno_ral/fs.ts";
+import { existsSync, expandGlobSync } from "../deno_ral/fs.ts";
 
 import * as ld from "./lodash.ts";
 

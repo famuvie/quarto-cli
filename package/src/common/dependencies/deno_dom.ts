@@ -5,7 +5,7 @@
 *
 */
 
-import { ensureDir } from "fs/mod.ts";
+import { ensureDir } from "../../../../src/deno_ral/fs.ts";
 import { basename, dirname, join } from "../../../../src/deno_ral/path.ts";
 import { Configuration } from "../config.ts";
 
