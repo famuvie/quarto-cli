@@ -13,8 +13,8 @@ import utcPlugin from "../resources/library/dayjs/plugins/utc.js";
 import isoWeekPlugin from "../resources/library/dayjs/plugins/isoweek.js";
 import weekOfYearPlugin from "../resources/library/dayjs/plugins/weekofyear.js";
 import weekYearPlugin from "../resources/library/dayjs/plugins/weekyear.js";
-import { existsSync } from "fs/mod.ts";
 
+import { existsSync } from "../deno_ral/fs.ts";
 import { toFileUrl } from "../deno_ral/path.ts";
 import { resourcePath } from "./resources.ts";
 

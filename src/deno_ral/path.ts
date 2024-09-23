@@ -5,20 +5,20 @@
  */
 
 export {
-  basename,
-  dirname,
-  extname,
-  fromFileUrl,
-  isAbsolute,
-  join,
-  normalize,
-  relative,
-  resolve,
   SEPARATOR as SEP,
   SEPARATOR_PATTERN as SEP_PATTERN,
-  toFileUrl,
-} from "path/mod.ts";
+} from "path/constants";
 
-export * as posix from "path/posix/mod.ts";
-
-export { globToRegExp } from "path/glob_to_regexp.ts";
+export { basename } from "path/basename";
+export { extname } from "path/extname";
+export { dirname } from "path/dirname";
+export { fromFileUrl } from "path/from-file-url";
+export { globToRegExp } from "path/glob-to-regexp";
+export { isAbsolute } from "path/is-absolute";
+export { join } from "path/join";
+export { relative } from "path/relative";
+export { resolve } from "path/resolve";
+export { normalize } from "path/normalize";
+export { toFileUrl } from "path/to-file-url";
+export { isGlob } from "path/is-glob";
+export * as posix from "path/posix";

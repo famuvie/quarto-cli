@@ -5,7 +5,7 @@
  */
 
 import { dirname, join, relative } from "../../deno_ral/path.ts";
-import { existsSync } from "fs/mod.ts";
+import { existsSync } from "../../deno_ral/fs.ts";
 
 import { kTheme } from "../../config/constants.ts";
 import {

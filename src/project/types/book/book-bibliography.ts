@@ -5,7 +5,7 @@
  */
 
 import { dirname, isAbsolute, join, relative } from "../../../deno_ral/path.ts";
-import { existsSync } from "fs/mod.ts";
+import { existsSync } from "../../../deno_ral/fs.ts";
 
 import * as ld from "../../../core/lodash.ts";
 import { stringify } from "yaml/mod.ts";

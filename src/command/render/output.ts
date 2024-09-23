@@ -18,7 +18,8 @@ import { writeFileToStdout } from "../../core/console.ts";
 import { dirAndStem, expandPath } from "../../core/path.ts";
 import { partitionYamlFrontMatter } from "../../core/yaml.ts";
 
-import { parse as parseYaml, stringify as stringifyYaml } from "yaml/mod.ts";
+import { parse as parseYaml } from "yaml/parse";
+import { stringify as stringifyYaml } from "yaml/stringify";
 
 import {
   kOutputExt,

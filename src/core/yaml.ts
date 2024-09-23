@@ -4,10 +4,10 @@
  * Copyright (C) 2020-2022 Posit Software, PBC
  */
 
-import { existsSync } from "fs/exists.ts";
+import { existsSync } from "../deno_ral/fs.ts";
 import { extname } from "../deno_ral/path.ts";
 
-import { parse } from "yaml/mod.ts";
+import { parse } from "yaml/parse";
 import { lines, matchAll, normalizeNewlines } from "./text.ts";
 import { ErrorEx } from "./lib/error.ts";
 import { getFrontMatterSchema } from "./lib/yaml-schema/front-matter.ts";
@@ -29,10 +29,10 @@ import {
 
 /// YAML schema imports
 
-import { Schema } from "yaml/schema.ts";
-import { Type } from "yaml/type.ts";
+import { Schema } from "yaml/schema";
+import { Type } from "yaml/type";
 import { bool, float, int, nil } from "yaml/_type/mod.ts";
-import { failsafe } from "yaml/schema/failsafe.ts";
+import { failsafe } from "yaml/schema/failsafe";
 
 const kRegExBeginYAML = /^---[ \t]*$/;
 const kRegExEndYAML = /^(?:---|\.\.\.)([ \t]*)$/;

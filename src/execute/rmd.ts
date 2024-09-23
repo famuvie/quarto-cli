@@ -5,7 +5,7 @@
  */
 
 import { error, info, warning } from "../deno_ral/log.ts";
-import { existsSync } from "fs/exists.ts";
+import { existsSync } from "../deno_ral/fs.ts";
 import { basename, extname } from "../deno_ral/path.ts";
 
 import * as colors from "fmt/colors.ts";

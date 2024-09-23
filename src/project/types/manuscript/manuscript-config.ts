@@ -6,7 +6,7 @@
 
 import { isAbsolute, join, relative } from "../../../deno_ral/path.ts";
 import { ProjectContext } from "../../types.ts";
-import { existsSync } from "fs/mod.ts";
+import { existsSync } from "../../../deno_ral/fs.ts";
 import {
   ManuscriptConfig,
   ResolvedManuscriptConfig,
