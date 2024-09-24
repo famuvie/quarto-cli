@@ -21,4 +21,6 @@ export { resolve } from "path/resolve";
 export { normalize } from "path/normalize";
 export { toFileUrl } from "path/to-file-url";
 export { isGlob } from "path/is-glob";
-export * as posix from "path/posix";
+
+import { normalize } from "path/posix/normalize";
+export const posix = { normalize };

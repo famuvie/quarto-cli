@@ -13,7 +13,7 @@ export { walk, walkSync } from "fs/walk";
 export { expandGlob, expandGlobSync } from "fs/expand-glob";
 export type { ExpandGlobOptions } from "fs/expand-glob";
 export { EOL, format, LF } from "fs/eol";
-export { copySync } from "fs/copy";
+export { copy, copySync } from "fs/copy";
 export type { CopyOptions } from "fs/copy";
 export { moveSync } from "fs/move";
 export { emptyDirSync } from "fs/empty-dir";
