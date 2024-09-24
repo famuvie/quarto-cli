@@ -12,7 +12,7 @@ import { Input } from "cliffy/prompt/input.ts";
 import { Select } from "cliffy/prompt/select.ts";
 
 import { dirname, join, relative } from "../../deno_ral/path.ts";
-import { crypto } from "crypto";
+import { crypto } from "crypto/crypto";
 import { encodeHex } from "encoding/hex";
 
 import { sleep } from "../../core/wait.ts";
