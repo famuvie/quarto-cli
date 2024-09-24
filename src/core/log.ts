@@ -186,9 +186,12 @@ export class LogEventsHandler extends StdErrOutputHandler {
 }
 
 export class LogFileHandler extends FileHandler {
+  logger: FileHandler;
   constructor(levelName: log.LevelName, options: LogFileHandlerOptions) {
     super(levelName, options);
+    this.logger = new FileHandler(levelName, options);
     this.msgFormat = options.format;
+    this.logger.formatter = this.format.bind(this);
   }
   msgFormat;
 
@@ -229,19 +232,7 @@ export class LogFileHandler extends FileHandler {
   async log(msg: string) {
     // Ignore any messages that are blank
     if (msg !== "") {
-      // Strip any color information that may have been applied
-      msg = colors.stripColor(msg);
-      if (!this._file) {
-        throw new Error("Internal error: logging file not open");
-      }
-      let buf = this._encoder.encode(msg);
-      let total = 0;
-      while (total < buf.length) {
-        const offset = this._file.writeSync(buf);
-        total += offset;
-        buf = buf.subarray(offset);
-      }
-      Deno.fsyncSync(this._file.rid);
+      this.logger.log(msg);
     }
   }
 }
