@@ -1,12 +1,12 @@
 {
   "imports": {
-    "archive/": "jsr:/@std/archive@^0.224.0/",
+    "archive/": "jsr:/@std/archive@^0.225.0/",
     "async": "jsr:/@std/async@^0.224.0",
     "async/": "jsr:/@std/async@^0.224.0/",
     "bytes/": "jsr:/@std/bytes@^0.224.0/",
     "collection/": "jsr:/@std/collection@^0.224.0/",
     "colors": "https://deno.land/std@0.217.0/fmt/colors.ts",
-    "crypto": "jsr:@std/crypto@^0.224.0",
+    "crypto/": "jsr:/@std/crypto@^0.224.0/",
     "datetime/": "jsr:/@std/datetime@^0.224.0/",
     "dotenv": "jsr:/@std/dotenv@^0.224.0",
     "dotenv/": "jsr:/@std/dotenv@^0.224.0/",
