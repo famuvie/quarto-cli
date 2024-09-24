@@ -122,7 +122,7 @@ export async function compileSass(
     ...userRules,
   ].join("\n\n");
 
-  const hash = md5HashBytes(new TextEncoder().encode(scssInput));
+  const hash = await md5HashBytes(new TextEncoder().encode(scssInput));
 
   // Compile the scss
   // Note that you can set this to undefined to bypass the cache entirely
