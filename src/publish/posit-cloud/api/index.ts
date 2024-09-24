@@ -18,8 +18,7 @@ import {
 import { md5Hash } from "../../../core/hash.ts";
 import { quartoConfig } from "../../../core/quarto.ts";
 
-import { crypto } from "crypto";
-
+import { crypto } from "crypto/crypto";
 import {
   decodeBase64 as base64Decode,
   encodeBase64 as base64Encode,
