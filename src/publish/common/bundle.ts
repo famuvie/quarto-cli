@@ -55,7 +55,7 @@ export async function createBundle(
     const filePath = join(files.baseDir, file);
     if (Deno.statSync(filePath).isFile) {
       const fileBytes = Deno.readFileSync(filePath);
-      const checksum = md5HashBytes(fileBytes);
+      const checksum = await md5HashBytes(fileBytes);
       manifestFiles[file] = { checksum };
     }
   }
