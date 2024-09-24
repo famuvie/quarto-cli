@@ -4,7 +4,7 @@
  * Copyright (C) 2020-2022 Posit Software, PBC
  */
 
-import { dump as stringify } from "yaml";
+import { stringify } from "../../core/yaml.ts";
 
 import {
   partitionYamlFrontMatter,
