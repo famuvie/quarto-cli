@@ -90,7 +90,7 @@ import { kDateFormat } from "../website/listing/website-listing-template.ts";
 import { removePandocTo } from "../../../command/render/flags.ts";
 import { resourcePath } from "../../../core/resources.ts";
 import { PandocAttr, PartitionedMarkdown } from "../../../core/pandoc/types.ts";
-import { stringify } from "yaml/stringify";
+import { dump as stringify } from "../../../core/yaml.ts";
 import { waitUntilNamedLifetime } from "../../../core/lifetimes.ts";
 
 export function bookPandocRenderer(

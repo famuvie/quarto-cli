@@ -5,7 +5,7 @@
  */
 
 import { warning } from "../deno_ral/log.ts";
-import { stringify } from "yaml/stringify";
+import { stringify } from "../core/yaml.ts";
 import { basename, dirname, join } from "../deno_ral/path.ts";
 
 import * as ld from "../core/lodash.ts";

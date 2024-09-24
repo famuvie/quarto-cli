@@ -2,7 +2,7 @@ import { noErrorsOrWarnings } from "../../verify.ts";
 import { join } from "../../../src/deno_ral/path.ts";
 import { ExecuteOutput, testQuartoCmd, Verify } from "../../test.ts";
 import { assert } from "testing/asserts";
-import { ensureDirSync, existsSync } from "fs/mod.ts";
+import { ensureDirSync, existsSync } from "../../../src/deno_ral/fs.ts";
 import { docs } from "../../utils.ts";
 
 const verifySubDirCount = (dir: string, count: number): Verify => {

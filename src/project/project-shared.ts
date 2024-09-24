@@ -41,7 +41,7 @@ import { ExecutionEngine } from "../execute/types.ts";
 import { InspectedMdCell } from "../quarto-core/inspect-types.ts";
 import { breakQuartoMd, QuartoMdCell } from "../core/lib/break-quarto-md.ts";
 import { partitionCellOptionsText } from "../core/lib/partition-cell-options.ts";
-import { parse } from "yaml/parse";
+import { load as parse } from "yaml";
 import { mappedIndexToLineCol } from "../core/lib/mapped-text.ts";
 import { normalizeNewlines } from "../core/lib/text.ts";
 import { DirectiveCell } from "../core/lib/break-quarto-md-types.ts";

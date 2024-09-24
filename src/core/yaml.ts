@@ -7,7 +7,6 @@
 import { existsSync } from "../deno_ral/fs.ts";
 import { extname } from "../deno_ral/path.ts";
 
-import { parse } from "yaml/parse";
 import { lines, matchAll, normalizeNewlines } from "./text.ts";
 import { ErrorEx } from "./lib/error.ts";
 import { getFrontMatterSchema } from "./lib/yaml-schema/front-matter.ts";
@@ -29,10 +28,16 @@ import {
 
 /// YAML schema imports
 
-// import { Schema } from "yaml/schema";
-// import { bool, float, int, nil } from "yaml/_type/mod.ts";
-import { Type } from "yaml/type";
-import { FAILSAFE_SCHEMA } from "yaml/schema/failsafe";
+import { Schema } from "yaml";
+import { types } from "yaml";
+const { bool, float, int, null: nil } = types;
+import { Type } from "yaml";
+import { FAILSAFE_SCHEMA } from "yaml";
+import { load } from "yaml";
+import { dump } from "yaml";
+
+export const stringify = dump;
+export const parse = load;
 
 const kRegExBeginYAML = /^---[ \t]*$/;
 const kRegExEndYAML = /^(?:---|\.\.\.)([ \t]*)$/;
@@ -262,25 +267,23 @@ export class YAMLValidationError extends ErrorEx {
 // Standard YAML's JSON schema + an expr tag handler ()
 // http://www.yaml.org/spec/1.2/spec.html#id2803231
 
-// We're blocked by https://github.com/denoland/std/issues/6037
-//
-// export const QuartoJSONSchema = new Schema({
-//   implicit: [nil, bool, int, float],
-//   include: [failsafe],
-//   explicit: [
-//     new Type("!expr", {
-//       kind: "scalar",
-//       construct(data): Record<string, unknown> {
-//         const result: string = data !== null ? data : "";
-//         return {
-//           value: result,
-//           tag: "!expr",
-//         };
-//       },
-//     }),
-//   ],
-// });
-export const QuartoJSONSchema = FAILSAFE_SCHEMA;
+export const QuartoJSONSchema = new Schema({
+  implicit: [nil, bool, int, float],
+  include: [FAILSAFE_SCHEMA],
+  explicit: [
+    new Type("!expr", {
+      kind: "scalar",
+      // deno-lint-ignore no-explicit-any
+      construct(data: any): Record<string, unknown> {
+        const result: string = data !== null ? data : "";
+        return {
+          value: result,
+          tag: "!expr",
+        };
+      },
+    }),
+  ],
+});
 
 // TODO there's lots of work to do here.
 // TODO take MappedString and fix line numbers

@@ -4,7 +4,7 @@
 * Copyright (C) 2020-2022 Posit Software, PBC
 *
 */
-import { stringify } from "yaml/stringify";
+import { stringify } from "../../../src/core/yaml.ts";
 import { dirname, join } from "../../../src/deno_ral/path.ts";
 import { assert } from "testing/asserts";
 

@@ -4,7 +4,7 @@
 * Copyright (C) 2020-2022 Posit Software, PBC
 *
 */
-import { existsSync } from "fs/mod.ts";
+import { existsSync } from "../src/deno_ral/fs.ts";
 import { fail } from "testing/asserts";
 import { warning } from "../src/deno_ral/log.ts";
 import { initDenoDom } from "../src/core/deno-dom.ts";
@@ -12,7 +12,7 @@ import { initDenoDom } from "../src/core/deno-dom.ts";
 import { cleanupLogger, initializeLogger, logError } from "../src/core/log.ts";
 import { quarto } from "../src/quarto.ts";
 import { join } from "../src/deno_ral/path.ts";
-import * as colors from "fmt/colors.ts";
+import * as colors from "fmt/colors";
 import { runningInCI } from "../src/core/ci-info.ts";
 import { relative, fromFileUrl } from "../src/deno_ral/path.ts";
 import { quartoConfig } from "../src/core/quarto.ts";

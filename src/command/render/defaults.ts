@@ -5,7 +5,7 @@
  */
 
 import { extname } from "../../deno_ral/path.ts";
-import { stringify } from "yaml/stringify";
+import { stringify } from "../../core/yaml.ts";
 
 import * as ld from "../../core/lodash.ts";
 

@@ -10,7 +10,7 @@ import { ensureDirSync, walkSync } from "../../deno_ral/fs.ts";
 import { dirname, extname, join, relative } from "../../deno_ral/path.ts";
 import * as colors from "fmt/colors";
 import { decodeBase64 as base64decode } from "encoding/base64";
-import { DumpOptions as StringifyOptions, stringify } from "yaml/stringify";
+import { stringify } from "../yaml.ts";
 import { partitionCellOptions } from "../lib/partition-cell-options.ts";
 import * as ld from "../lodash.ts";
 
@@ -933,7 +933,8 @@ export function jupyterCellWithOptions(
 export function jupyterCellOptionsAsComment(
   language: string,
   options: Record<string, unknown>,
-  stringifyOptions?: StringifyOptions,
+  // deno-lint-ignore no-explicit-any
+  stringifyOptions?: any,
 ) {
   if (Object.keys(options).length > 0) {
     const cellYaml = stringify(options, {
