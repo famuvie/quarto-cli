@@ -238,7 +238,7 @@ async function publish(
     }, async () => {
       const bundleBytes = Deno.readFileSync(bundlePath);
       const bundleSize = bundleBytes.length;
-      const bundleHash = md5HashBytes(bundleBytes);
+      const bundleHash = await md5HashBytes(bundleBytes);
 
       const bundle = await client.createBundle(
         applicationId,
