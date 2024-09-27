@@ -1,4 +1,4 @@
-// Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
+// Copyright 2018-2024 the Deno authors. All rights reserved. MIT license.
 
 import { assert } from "../assert/assert.ts";
 
@@ -32,7 +32,7 @@ export function runLengthDecode({ d, r }: { d: string; r: string }) {
   let out = "";
 
   for (const [i, ch] of [...runLengths].entries()) {
-    out += data[i].repeat(ch.codePointAt(0)!);
+    out += data[i]!.repeat(ch.codePointAt(0)!);
   }
 
   return Uint8Array.from([...out].map((x) => x.codePointAt(0)!));

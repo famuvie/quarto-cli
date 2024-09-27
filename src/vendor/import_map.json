@@ -124,6 +124,7 @@
     "binary-search-bounds": "./cdn.skypack.dev/binary-search-bounds@2.0.5.js",
     "slimdom": "./cdn.skypack.dev/slimdom@4.2.0.js",
     "fontoxpath": "./cdn.skypack.dev/fontoxpath@3.29.1.js",
+    "https://deno.land/std@0.196.0/console/unicode_width.ts": "./deno.land/std@0.224.0/console/unicode_width.ts",
     "https://deno.land/std@0.105.0/path/mod.ts": "./deno.land/std@0.217.0/path/mod.ts",
     "https://cdn.skypack.dev/": "./cdn.skypack.dev/",
     "https://deno.land/": "./deno.land/",

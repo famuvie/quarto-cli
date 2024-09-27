@@ -50,6 +50,7 @@
     "js-yaml": "./vendor/cdn.skypack.dev/js-yaml@4.1.0.js",
     "slimdom": "./vendor/cdn.skypack.dev/slimdom@4.2.0.js",
     "fontoxpath": "./vendor/cdn.skypack.dev/fontoxpath@3.29.1.js",
+    "https://deno.land/std@0.196.0/console/unicode_width.ts": "./vendor/deno.land/std@0.224.0/console/unicode_width.ts",
     "https://deno.land/std@0.161.0/": "./vendor/deno.land/std@0.217.0/",
     "https://deno.land/std@0.101.0/": "./vendor/deno.land/std@0.217.0/",
     "https://deno.land/std@0.105.0/": "./vendor/deno.land/std@0.217.0/",
