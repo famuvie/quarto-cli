@@ -23914,12 +23914,12 @@ try {
           mermaid: "%%"
         },
         "handlers/mermaid/schema.yml": {
-          _internalId: 182772,
+          _internalId: 187602,
           type: "object",
           description: "be an object",
           properties: {
             "mermaid-format": {
-              _internalId: 182764,
+              _internalId: 187594,
               type: "enum",
               enum: [
                 "png",
@@ -23935,7 +23935,7 @@ try {
               exhaustiveCompletions: true
             },
             theme: {
-              _internalId: 182771,
+              _internalId: 187601,
               type: "anyOf",
               anyOf: [
                 {
